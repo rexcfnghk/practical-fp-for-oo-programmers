@@ -581,11 +581,3 @@ Notice how the pipeline is constructed with an expressive syntax
 ## Thank you
 
 By the way, this presentation is also written using an F♯ library [FsReveal](https://www.google.com.hk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjXgeuv_9HQAhXHopQKHXO2Cv8QFgggMAE&url=https%3A%2F%2Ffsprojects.github.io%2FFsReveal%2F&usg=AFQjCNFC0ocv4cDfE2P-9lcnCJbkVctp_w&sig2=ncze0oWlYG-BpfFzDOsmIg). It integrates Markdown, C♯, and F♯ to the [reveal.js](https://github.com/hakimel/reveal.js/) web presentation framework.
-
-***
-
-This presentation can be downloadeded and viewed via
-
-    git clone http://gitlab.thisisnoble.com/rexng/practical-fp-for-oo-programmers.git
-
-and then running `build.cmd`/`build.sh`
