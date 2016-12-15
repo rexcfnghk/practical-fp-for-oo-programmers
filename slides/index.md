@@ -284,7 +284,7 @@ First, let us redefine `list` in a functional way
 - Can only ‘update’ by building a new `list`
 
 ---
-### Answer: you don’t
+### Update state without assignments
 
     let input = [1 .. 5]
     
@@ -526,9 +526,7 @@ Why?
         else Success user
 
     // This will be used as our in-memory duplicateChecker
-    let dummyDuplicateChecker = function
-        | "Foo" -> true
-        | _ -> false
+    let dummyDuplicateChecker = (=) "Foo"
 
 ---
     let sequentialValidatePipeline =
