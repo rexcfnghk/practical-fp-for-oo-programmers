@@ -127,7 +127,7 @@
 <div class="tip" id="fs79">val validateAge : user:User -&gt; Result&lt;User&gt;<br /><br />Full name: index.validateAge</div>
 <div class="tip" id="fs80">val validateDuplicateName : duplicateChecker:(string -&gt; bool) -&gt; user:User -&gt; Result&lt;User&gt;<br /><br />Full name: index.validateDuplicateName</div>
 <div class="tip" id="fs81">val duplicateChecker : (string -&gt; bool)</div>
-<div class="tip" id="fs82">val dummyDuplicateChecker : _arg1:string -&gt; bool<br /><br />Full name: index.dummyDuplicateChecker</div>
+<div class="tip" id="fs82">val dummyDuplicateChecker : (string -&gt; bool)<br /><br />Full name: index.dummyDuplicateChecker</div>
 <div class="tip" id="fs83">val sequentialValidatePipeline : (User -&gt; Result&lt;User&gt;)<br /><br />Full name: index.sequentialValidatePipeline</div>
 <div class="tip" id="fs84">val parallelValidatePipeline : (User -&gt; Result&lt;User&gt;)<br /><br />Full name: index.parallelValidatePipeline</div>
 <div class="tip" id="fs85">val testUser : User<br /><br />Full name: index.testUser</div>
@@ -537,7 +537,7 @@ C♯ programmers should already be quite familiar with it
 </ul>
 </section>
 <section >
-<h3>Answer: you don’t</h3>
+<h3>Update state without assignments</h3>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -892,8 +892,6 @@ Assert.Equals(sum<span class="n">1</span>, sum<span class="n">2</span>);
 <span class="l">17: </span>
 <span class="l">18: </span>
 <span class="l">19: </span>
-<span class="l">20: </span>
-<span class="l">21: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs75', 210)" onmouseover="showTip(event, 'fs75', 210)" class="f">validateName</span> <span onmouseout="hideTip(event, 'fs76', 211)" onmouseover="showTip(event, 'fs76', 211)" class="i">user</span> <span class="o">=</span>
     <span class="k">if</span> <span onmouseout="hideTip(event, 'fs77', 212)" onmouseover="showTip(event, 'fs77', 212)" class="t">String</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs78', 213)" onmouseover="showTip(event, 'fs78', 213)" class="f">length</span> <span onmouseout="hideTip(event, 'fs76', 214)" onmouseover="showTip(event, 'fs76', 214)" class="i">user</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs54', 215)" onmouseover="showTip(event, 'fs54', 215)" class="i">Name</span> <span class="o">=</span> <span class="n">0</span>
@@ -913,9 +911,7 @@ Assert.Equals(sum<span class="n">1</span>, sum<span class="n">2</span>);
     <span class="k">else</span> <span onmouseout="hideTip(event, 'fs58', 233)" onmouseover="showTip(event, 'fs58', 233)" class="p">Success</span> <span onmouseout="hideTip(event, 'fs76', 234)" onmouseover="showTip(event, 'fs76', 234)" class="i">user</span>
 
 <span class="c">// This will be used as our in-memory duplicateChecker</span>
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs82', 235)" onmouseover="showTip(event, 'fs82', 235)" class="f">dummyDuplicateChecker</span> <span class="o">=</span> <span class="k">function</span>
-    | <span class="s">&quot;Foo&quot;</span> <span class="k">-&gt;</span> <span class="k">true</span>
-    | _ <span class="k">-&gt;</span> <span class="k">false</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs82', 235)" onmouseover="showTip(event, 'fs82', 235)" class="f">dummyDuplicateChecker</span> <span class="o">=</span> (<span class="o">=</span>) <span class="s">&quot;Foo&quot;</span>
 </code></pre></td>
 </tr>
 </table>
