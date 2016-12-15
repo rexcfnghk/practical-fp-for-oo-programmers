@@ -160,10 +160,17 @@
 <p><img src="http://www.safetysign.com/images/source/large-images/D3948.png" alt="Safety, Quality, Quantity" /></p>
 </section>
 <section >
-<section >
 <h3>What is the problem with assignment</h3>
 <p>Difficult to reason about</p>
 </section>
+<section >
+<h3>Just to be clear</h3>
+<ul>
+<li>Assignments, and thereby side effects are necessary for any useful programs</li>
+<li>FP tries to contain them in a disciplined manner</li>
+</ul>
+</section>
+<section >
 <section >
 <h3>A typical method in a C♯ interface</h3>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
@@ -939,12 +946,12 @@ Assert.Equals(sum<span class="n">1</span>, sum<span class="n">2</span>);
 <span class="k">let</span> <span onmouseout="hideTip(event, 'fs84', 241)" onmouseover="showTip(event, 'fs84', 241)" class="f">parallelValidatePipeline</span> <span class="o">=</span> 
     <span onmouseout="hideTip(event, 'fs75', 242)" onmouseover="showTip(event, 'fs75', 242)" class="f">validateName</span> 
     <span class="o">&amp;&amp;&amp;</span> <span onmouseout="hideTip(event, 'fs79', 243)" onmouseover="showTip(event, 'fs79', 243)" class="f">validateAge</span>
-    <span class="o">&amp;&amp;&amp;</span> <span onmouseout="hideTip(event, 'fs80', 244)" onmouseover="showTip(event, 'fs80', 244)" class="f">validateDuplicateName</span> <span class="i">dummyDuplicateUserNameValidator</span>
+    <span class="o">&amp;&amp;&amp;</span> <span onmouseout="hideTip(event, 'fs80', 244)" onmouseover="showTip(event, 'fs80', 244)" class="f">validateDuplicateName</span> <span onmouseout="hideTip(event, 'fs82', 245)" onmouseover="showTip(event, 'fs82', 245)" class="f">dummyDuplicateChecker</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs85', 245)" onmouseover="showTip(event, 'fs85', 245)" class="i">testUser</span> <span class="o">=</span> { <span class="i">Name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>; <span class="i">Age</span> <span class="o">=</span> <span class="n">11</span> }
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs85', 246)" onmouseover="showTip(event, 'fs85', 246)" class="i">testUser</span> <span class="o">=</span> { <span class="i">Name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>; <span class="i">Age</span> <span class="o">=</span> <span class="n">11</span> }
 
-<span onmouseout="hideTip(event, 'fs83', 246)" onmouseover="showTip(event, 'fs83', 246)" class="f">sequentialValidatePipeline</span> <span onmouseout="hideTip(event, 'fs85', 247)" onmouseover="showTip(event, 'fs85', 247)" class="i">testUser</span>
-<span onmouseout="hideTip(event, 'fs84', 248)" onmouseover="showTip(event, 'fs84', 248)" class="f">parallelValidatePipeline</span> <span onmouseout="hideTip(event, 'fs85', 249)" onmouseover="showTip(event, 'fs85', 249)" class="i">testUser</span>
+<span onmouseout="hideTip(event, 'fs83', 247)" onmouseover="showTip(event, 'fs83', 247)" class="f">sequentialValidatePipeline</span> <span onmouseout="hideTip(event, 'fs85', 248)" onmouseover="showTip(event, 'fs85', 248)" class="i">testUser</span>
+<span onmouseout="hideTip(event, 'fs84', 249)" onmouseover="showTip(event, 'fs84', 249)" class="f">parallelValidatePipeline</span> <span onmouseout="hideTip(event, 'fs85', 250)" onmouseover="showTip(event, 'fs85', 250)" class="i">testUser</span>
 </code></pre></td>
 </tr>
 </table>
@@ -971,21 +978,21 @@ Assert.Equals(sum<span class="n">1</span>, sum<span class="n">2</span>);
 <span class="l">16: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// C# equivalent will be an ILogger interface</span>
-<span class="k">type</span> <span onmouseout="hideTip(event, 'fs86', 250)" onmouseover="showTip(event, 'fs86', 250)" class="t">Logger</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs2', 251)" onmouseover="showTip(event, 'fs2', 251)" class="t">string</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs87', 252)" onmouseover="showTip(event, 'fs87', 252)" class="t">unit</span>
+<span class="k">type</span> <span onmouseout="hideTip(event, 'fs86', 251)" onmouseover="showTip(event, 'fs86', 251)" class="t">Logger</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs2', 252)" onmouseover="showTip(event, 'fs2', 252)" class="t">string</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs87', 253)" onmouseover="showTip(event, 'fs87', 253)" class="t">unit</span>
 
 <span class="c">// C# equivalent will be the generic delegate Action</span>
-<span class="k">type</span> <span onmouseout="hideTip(event, 'fs88', 253)" onmouseover="showTip(event, 'fs88', 253)" class="t">SaveAction</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs87', 254)" onmouseover="showTip(event, 'fs87', 254)" class="t">unit</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs87', 255)" onmouseover="showTip(event, 'fs87', 255)" class="t">unit</span>
+<span class="k">type</span> <span onmouseout="hideTip(event, 'fs88', 254)" onmouseover="showTip(event, 'fs88', 254)" class="t">SaveAction</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs87', 255)" onmouseover="showTip(event, 'fs87', 255)" class="t">unit</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs87', 256)" onmouseover="showTip(event, 'fs87', 256)" class="t">unit</span>
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs89', 256)" onmouseover="showTip(event, 'fs89', 256)" class="f">saveToDb</span> (<span onmouseout="hideTip(event, 'fs90', 257)" onmouseover="showTip(event, 'fs90', 257)" class="f">infoLogger</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs86', 258)" onmouseover="showTip(event, 'fs86', 258)" class="t">Logger</span>) (<span onmouseout="hideTip(event, 'fs91', 259)" onmouseover="showTip(event, 'fs91', 259)" class="f">saveAction</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs88', 260)" onmouseover="showTip(event, 'fs88', 260)" class="t">SaveAction</span>) () <span class="o">=</span>
-    <span onmouseout="hideTip(event, 'fs90', 261)" onmouseover="showTip(event, 'fs90', 261)" class="f">infoLogger</span> <span class="s">&quot;Saving to database&quot;</span>
-    <span onmouseout="hideTip(event, 'fs91', 262)" onmouseover="showTip(event, 'fs91', 262)" class="f">saveAction</span> ()
-    <span onmouseout="hideTip(event, 'fs90', 263)" onmouseover="showTip(event, 'fs90', 263)" class="f">infoLogger</span> <span class="s">&quot;Save complete&quot;</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs89', 257)" onmouseover="showTip(event, 'fs89', 257)" class="f">saveToDb</span> (<span onmouseout="hideTip(event, 'fs90', 258)" onmouseover="showTip(event, 'fs90', 258)" class="f">infoLogger</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs86', 259)" onmouseover="showTip(event, 'fs86', 259)" class="t">Logger</span>) (<span onmouseout="hideTip(event, 'fs91', 260)" onmouseover="showTip(event, 'fs91', 260)" class="f">saveAction</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs88', 261)" onmouseover="showTip(event, 'fs88', 261)" class="t">SaveAction</span>) () <span class="o">=</span>
+    <span onmouseout="hideTip(event, 'fs90', 262)" onmouseover="showTip(event, 'fs90', 262)" class="f">infoLogger</span> <span class="s">&quot;Saving to database&quot;</span>
+    <span onmouseout="hideTip(event, 'fs91', 263)" onmouseover="showTip(event, 'fs91', 263)" class="f">saveAction</span> ()
+    <span onmouseout="hideTip(event, 'fs90', 264)" onmouseover="showTip(event, 'fs90', 264)" class="f">infoLogger</span> <span class="s">&quot;Save complete&quot;</span>
 
 <span class="c">// Create fake for unit testing</span>
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs92', 264)" onmouseover="showTip(event, 'fs92', 264)" class="f">fakeSaveToDb</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs89', 265)" onmouseover="showTip(event, 'fs89', 265)" class="f">saveToDb</span> <span onmouseout="hideTip(event, 'fs93', 266)" onmouseover="showTip(event, 'fs93', 266)" class="f">ignore</span> <span onmouseout="hideTip(event, 'fs93', 267)" onmouseover="showTip(event, 'fs93', 267)" class="f">ignore</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs92', 265)" onmouseover="showTip(event, 'fs92', 265)" class="f">fakeSaveToDb</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs89', 266)" onmouseover="showTip(event, 'fs89', 266)" class="f">saveToDb</span> <span onmouseout="hideTip(event, 'fs93', 267)" onmouseover="showTip(event, 'fs93', 267)" class="f">ignore</span> <span onmouseout="hideTip(event, 'fs93', 268)" onmouseover="showTip(event, 'fs93', 268)" class="f">ignore</span>
 
 <span class="c">// Real production code</span>
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs94', 268)" onmouseover="showTip(event, 'fs94', 268)" class="f">efSaveToDb</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs89', 269)" onmouseover="showTip(event, 'fs89', 269)" class="f">saveToDb</span> <span class="i">Log4NetLogger</span> <span class="i">DbContext</span><span class="o">.</span><span class="i">Save</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs94', 269)" onmouseover="showTip(event, 'fs94', 269)" class="f">efSaveToDb</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs89', 270)" onmouseover="showTip(event, 'fs89', 270)" class="f">saveToDb</span> <span class="i">Log4NetLogger</span> <span class="i">DbContext</span><span class="o">.</span><span class="i">Save</span>
 </code></pre></td>
 </tr>
 </table>
