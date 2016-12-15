@@ -28,7 +28,14 @@
 
 Difficult to reason about
 
----
+***
+
+### Just to be clear
+
+- Assignments, and thereby side effects are necessary for any useful programs
+- FP tries to contain them in a disciplined manner
+
+***
 
 ### A typical method in a C♯ interface
 
@@ -533,7 +540,7 @@ Why?
     let parallelValidatePipeline = 
         validateName 
         &&& validateAge
-        &&& validateDuplicateName dummyDuplicateUserNameValidator
+        &&& validateDuplicateName dummyDuplicateChecker
 
     let testUser = { Name = ""; Age = 11 }
 
